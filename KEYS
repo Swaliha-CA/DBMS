@@ -1,0 +1,310 @@
+tudent@ml-36:~/swaliha$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+student@ml-36:~/swaliha$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.40-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database swaliha
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use database
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use swaliha
+Database changed
+mysql> create table student(stu_id int PRIMARY KEY,name varchar(10),phone_no varchar(10));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into student values(112,"arun","63748909"),(123,"amal","4343888"); 
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select *from student;
++--------+------+----------+
+| stu_id | name | phone_no |
++--------+------+----------+
+|    112 | arun | 63748909 |
+|    123 | amal | 4343888  |
++--------+------+----------+
+2 rows in set (0.00 sec)
+
+mysql> insert into student values(512,"zaddy","63546909"),(223,"aswathy","4783888");
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select *from student;
++--------+---------+----------+
+| stu_id | name    | phone_no |
++--------+---------+----------+
+|    112 | arun    | 63748909 |
+|    123 | amal    | 4343888  |
+|    223 | aswathy | 4783888  |
+|    512 | zaddy   | 63546909 |
++--------+---------+----------+
+4 rows in set (0.00 sec)
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| stu_id   | int         | NO   | PRI | NULL    |       |
+| name     | varchar(10) | YES  |     | NULL    |       |
+| phone_no | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)nt,stu_ID int ,FOREIGN KEY(stu_ID) REFERENCES student(stu_id));
+
+mysql> insert into hostel values(101,444);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`swaliha`.`hostel`, CONSTRAINT `hostel_ibfk_1` FOREIGN KEY (`stu_ID`) REFERENCES `student` (`stu_id`))
+mysql> insert into hostel values(178,112);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into hostel values(145,2230;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> insert into hostel values(145,223);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from student;
++--------+---------+----------+
+| stu_id | name    | phone_no |
++--------+---------+----------+
+|    112 | arun    | 63748909 |
+|    123 | amal    | 4343888  |
+|    223 | aswathy | 4783888  |
+|    512 | zaddy   | 63546909 |
++--------+---------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select *from hostel;
++---------+--------+
+| room_no | stu_ID |
++---------+--------+
+|     178 |    112 |
+|     145 |    223 |
++---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> create table new6(userID int PRIMARY KEY ,email_ID varchar(20) UNIQUE);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into new6 values(1123,"suku@123");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into new6 values(1123,"swalihaswali100@gamil.com");
+ERROR 1406 (22001): Data too long for column 'email_ID' at row 1
+mysql> insert into new6 values(1123,"swaliha@gmail.com");
+ERROR 1062 (23000): Duplicate entry '1123' for key 'new6.PRIMARY'
+mysql> insert into new6 values(123,"swaliha@gmail.com");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into new6 values(123);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into new6 values(123,NULL);
+ERROR 1062 (23000): Duplicate entry '123' for key 'new6.PRIMARY'
+mysql> insert into new6 values(13423,NULL);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create table new7(NULL,name varchar
+    -> create table new7(NULL,name varchar(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL,name varchar
+create table new7(NULL,name varchar(100)' at line 1
+mysql> create table new7(roll int NULL,id int)
+    -> ;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into new7(NULL,23);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL,23)' at line 1
+mysql> insert into new7(,23);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',23)' at line 1
+mysql> create table new8(name varchar(10),age int CHECK (age
+    -> create table new8(name varchar(10),age int CHECK (age>=18));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table new8(name varchar(10),age int CHECK (age>=18))' at line 2
+mysql> ;create table new8(roll_no int PRIMARY KEY,age int check (age>=18));
+ERROR: 
+No query specified
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into new8 values (11,11);
+ERROR 3819 (HY000): Check constraint 'new8_chk_1' is violated.
+mysql> insert into new8 values (11,61),(34,20);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select *from new8;
++---------+------+
+| roll_no | age  |
++---------+------+
+|      11 |   61 |
+|      34 |   20 |
++---------+------+
+2 rows in set (0.00 sec)
+
+mysql> create table new9(employee_ID int PRIMARY KEY,Fname varchar(20) NOT NULL,Lname varchar(20),s
+alary int NOT NULL,status varchar(20) DEFAULT 'Active');
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into new9(11,'swaliha','swali',200000,'not active');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '11,'swaliha','swali',200000,'not active')' at line 1
+mysql> insert into new9 values(11,"swaliha",'swali',200000,'not active');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create table new9(Fname,Lname,salary)values('zayed','bin hassan',50000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',Lname,salary)values('zayed','bin hassan',50000)' at line 1
+mysql> create table new9(employee_ID,Fname,Lname,salary)values(11,'zayed','bin hassan',50000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',Fname,Lname,salary)values(11,'zayed','bin hassan',50000)' at line 1
+mysql> create table new9(employee_ID,Fname,Lname,salary) values(11,'zayed','bin hassan',50000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',Fname,Lname,salary) values(11,'zayed','bin hassan',50000)' at line 1
+mysql> insert into table new9(employee_ID,Fname,Lname,salary) values(11,'zayed','bin hassan',50000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table new9(employee_ID,Fname,Lname,salary) values(11,'zayed','bin hassan',50000)' at line 1
+mysql> insert into new9(employee_ID,Fname,Lname,salary) values(11,'zayed','bin hassan',50000);
+ERROR 1062 (23000): Duplicate entry '11' for key 'new9.PRIMARY'
+mysql> insert into new9(employee_ID,Fname,Lname,salary) values(121,'zayed','bin hassan',50000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from new9;
++-------------+---------+------------+--------+------------+
+| employee_ID | Fname   | Lname      | salary | status     |
++-------------+---------+------------+--------+------------+
+|          11 | swaliha | swali      | 200000 | not active |
+|         121 | zayed   | bin hassan |  50000 | Active     |
++-------------+---------+------------+--------+------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into new9(employee_ID,Fname,Lname,salary) values(521,'amal','babu',50000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from new9;
++-------------+---------+------------+--------+------------+
+| employee_ID | Fname   | Lname      | salary | status     |
++-------------+---------+------------+--------+------------+
+|          11 | swaliha | swali      | 200000 | not active |
+|         121 | zayed   | bin hassan |  50000 | Active     |
+|         521 | amal    | babu       |  50000 | Active     |
++-------------+---------+------------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into new9(employee_ID,Fname,Lname,salary) values(521,'swali','minnu',500000);
+ERROR 1062 (23000): Duplicate entry '521' for key 'new9.PRIMARY'
+mysql> insert into new9(employee_ID,Fname,Lname,salary) values(921,'swali','minnu',500000);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select *from new9;
++-------------+---------+------------+--------+------------+
+| employee_ID | Fname   | Lname      | salary | status     |
++-------------+---------+------------+--------+------------+
+|          11 | swaliha | swali      | 200000 | not active |
+|         121 | zayed   | bin hassan |  50000 | Active     |
+|         521 | amal    | babu       |  50000 | Active     |
+|         921 | swali   | minnu      | 500000 | Active     |
++-------------+---------+------------+--------+------------+
+4 rows in set (0.00 sec)
+
+mysql> desc new9;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| employee_ID | int         | NO   | PRI | NULL    |       |
+| Fname       | varchar(20) | NO   |     | NULL    |       |
+| Lname       | varchar(20) | YES  |     | NULL    |       |
+| salary      | int         | NO   |     | NULL    |       |
+| status      | varchar(20) | YES  |     | Active  |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table Employee(EmployeeID int PRIMARY KEY,names varchar(10),department varchar(10));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into Employee values(112,'arjun','AI'),(234,'aswin','DS');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into Employee values(12,'arjun','IT'),(34,'aswin','CS');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from Employee;
++------------+-------+------------+
+| EmployeeID | names | department |
++------------+-------+------------+
+|         12 | arjun | IT         |
+|         34 | aswin | CS         |
+|        112 | arjun | AI         |
+|        234 | aswin | DS         |
++------------+-------+------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Employee values(12,'arjun','IT'),(34,'aswin','CS');
+ERROR 1062 (23000): Duplicate entry '12' for key 'Employee.PRIMARY'
+mysql> create a table Department(employeeid int,roll_no int,FOREIGN KEY (employeeid) REFERENCES Employee(EmployeeID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'a table Department(employeeid int,roll_no int,FOREIGN KEY (employeeid) REFERENCE' at line 1
+mysql> create table Department(employeeid int,roll_no int,FOREIGN KEY (employeeid) REFERENCES Employee(EmployeeID));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into Department values(12,33),(34,66);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select *from Department;
++------------+---------+
+| employeeid | roll_no |
++------------+---------+
+|         12 |      33 |
+|         34 |      66 |
++------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> insert into Department values(2,33),(4,66);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`swaliha`.`Department`, CONSTRAINT `Department_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `Employee` (`EmployeeID`))
+mysql> create table library(ID int PRIMARY KEY,booktitle varchar(70) UNIQUE);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into library values(22,'blabla');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into library values(2,'blabla');
+ERROR 1062 (23000): Duplicate entry 'blabla' for key 'library.booktitle'
+mysql> create table courses(coursename varchar(20) NOT NULL,branch varchar(20));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into courses('computer','AI');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''computer','AI')' at line 1
+mysql> insert into courses values('computer','AI');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from courses;
++------------+--------+
+| coursename | branch |
++------------+--------+
+| computer   | AI     |
++------------+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into courses(branch) values ('AI');
+ERROR 1364 (HY000): Field 'coursename' doesn't have a default value
+mysql> create table Students(name varchar(20),age int CHECK (age>=5));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into Students values('atul',16);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Students values('atul',16);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Students values('atul',4);
+ERROR 3819 (HY000): Check constraint 'Students_chk_1' is violated.
+mysql> create table User(roll int,status varchar(60) DEFAULT 'active');
+Query OK, 0 rows affected (0.02 sec)
+
