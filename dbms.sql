@@ -18,7 +18,7 @@
 /*select min(p_price) as minimum_price from products;*/
 /*select max(p_price) as maximum_price from products;*/
 /*select count(p_id) as total_no_of_products from products;*/
-select avg(p_price) os average_price from products;
+/*select avg(p_price) os average_price from products;*/
 
 
 
