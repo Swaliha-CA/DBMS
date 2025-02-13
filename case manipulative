@@ -1,0 +1,17 @@
+select lower('ASIET IS FOR TECH GEEKS ONLY')FROM dual;
+select upper('asiet is for geeks')from dual;
+select INITCAP('AI is a sub-branch of cse')from dual;
+select concat('CSE','-AI')from dual;
+select concat(NULL,'CSE')from dual;
+select length('learning is always fun')from dual;
+select length('    DATABASE')from dual;
+select substr('DATABASE MANAGEMENT SYSTEM',9)FROM dual;
+select substr('DATABASE MANAGEMENT SYSTEM',9,7)FROM dual;
+select INSTR('Google apps are the great applications','app')from dual;
+select LPAD('100',5,'*')from dual;
+select RPAD('200',6,'*')from dual;
+select LPAD('HELLO',21,'asiet')from dual;
+select RPAD('EARN',19,'respect')from duaal;
+select TRIM('A'from 'ANDROID')from dual;
+select TRIM('         ANDROID')from dual;
+select REPLACE('DATA MANAGEMENT','DATA','DATABASE')from dual;
