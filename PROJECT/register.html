@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>IRCTC Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Add any custom CSS here */
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+            <img alt="Indian Railways Logo" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/7qU9svYlQmxlX9UdO8XnJ3BRFllOJWjgBGCgSdEmPvY.jpg" width="50"/>
+            <div class="flex space-x-4">
+                <a class="text-blue-900" href="login.html">LOGIN</a>
+                <a class="text-blue-900" href="index.html">HOME</a>
+                <a class="text-blue-900" href="contact.html">CONTACT US</a>
+                <a class="text-blue-900" href="#">HELP & SUPPORT</a>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto mt-8 px-4">
+        <h1 class="text-3xl font-bold text-blue-900 mb-4">Register for IRCTC</h1>
+        <form class="bg-gray-100 p-6 rounded-lg shadow-md space-y-4">
+            <div>
+                <label class="block text-gray-700" for="userId">User  ID</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="text" id="userId" placeholder="Enter User ID" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="password">Password</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="password" id="password" placeholder="Enter Password" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="confirmPassword">Confirm Password</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="password" id="confirmPassword" placeholder="Confirm Password" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="name">Full Name</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="text" id="name" placeholder="Enter Full Name" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="email">Email</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="email" id="email" placeholder="Enter Email" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="mobile">Mobile Number</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="tel" id="mobile" placeholder="Enter Mobile Number" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="dob">Date of Birth</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="date" id="dob" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="gender">Gender</label>
+                <select class="w-full border border-gray-300 rounded p-2" id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button class="bg-blue-900 text-white px-4 py-2 rounded" type="submit">Register</button>
+        </form>
+    </main>
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">© 2025 IRCTC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
