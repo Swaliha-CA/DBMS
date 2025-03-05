@@ -3,31 +3,41 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Login</title>
+    <title>IRCTC Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-white font-sans">
     <header class="bg-white shadow">
         <div class="container mx-auto flex justify-between items-center py-2 px-4">
-            <img alt="Indian Railways Logo" class="h-12" src="https://storage.googleapis.com/a1aa/image/7qU9svYlQmxlX9UdO8XnJ3BRFllOJWjgBGCgSdEmPvY.jpg"/>
-            <nav class="flex space-x-4">
-                <a class="text-blue-900" href="login.html">LOGIN</a>
+            <img alt="Indian Railways Logo" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/7qU9svYlQmxlX9UdO8XnJ3BRFllOJWjgBGCgSdEmPvY.jpg" width="50"/>
+            <div class="flex space-x-4">
                 <a class="text-blue-900" href="register.html">REGISTER</a>
-                <a class="text-blue-900" href="about.html">ABOUT</a>
+                <a class="text-blue-900" href="index.html">HOME</a>
                 <a class="text-blue-900" href="contact.html">CONTACT US</a>
                 <a class="text-blue-900" href="#">HELP & SUPPORT</a>
-                <a class="text-red-600 cursor-pointer" href="#offers">OFFERS</a>
-                <a class="text-gray-900 bg-gray-200 px-2 py-1" href="#">ALERTS</a>
-            </nav>
+            </div>
         </div>
     </header>
-    <main class="container mx-auto mt-4 px-4">
-        <h1 class="text-3xl font-bold text-blue-900 mb-4">Login</h1>
-        <form class="space-y-4">
-            <input class="border border-gray-300 rounded p-2 w-full" placeholder="Username" type="text"/>
-            <input class="border border-gray-300 rounded p-2 w-full" placeholder="Password" type="password"/>
-            <button class="bg-orange-500 text-white px-4 py-2 rounded">Login</button>
+    <main class="container mx-auto mt-8 px-4">
+        <h1 class="text-3xl font-bold text-blue-900 mb-4">Login to IRCTC</h1>
+        <form class="bg-gray-100 p-6 rounded-lg shadow-md space-y-4">
+            <div>
+                <label class="block text-gray-700" for="userId">User  ID</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="text" id="userId" placeholder="Enter User ID" required/>
+            </div>
+            <div>
+                <label class="block text-gray-700" for="password">Password</label>
+                <input class="w-full border border-gray-300 rounded p-2" type="password" id="password" placeholder="Enter Password" required/>
+            </div>
+            <button class="bg-blue-900 text-white px-4 py-2 rounded" type="submit">Login</button>
+            <p class="text-sm text-gray-600">Don't have an account? <a class="text-blue-600 underline" href="register.html">Register here</a></p>
         </form>
     </main>
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">© 2025 IRCTC. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
