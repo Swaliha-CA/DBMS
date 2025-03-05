@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>IRCTC Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Add any custom CSS here */
+    </style>
+    <script>
+        function scrollToOffers() {
+            document.getElementById('offers-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body class="bg-white font-sans">
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+            <img alt="Indian Railways Logo" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/7qU9svYlQmxlX9UdO8XnJ3BRFllOJWjgBGCgSdEmPvY.jpg" width="50"/>
+            <div class="flex space-x-4">
+                <a class="text-blue-900" href="login.html">LOGIN</a>
+                <a class="text-blue-900" href="register.html">REGISTER</a>
+                <a class="text-blue-900" href="#about">ABOUT</a>
+                <a class="text-blue-900" href="contact.html">CONTACT US</a>
+                <a class="text-blue-900" href="help.html">HELP & SUPPORT</a>
+                <a class="text-red-600 cursor-pointer" onclick="scrollToOffers()">OFFERS</a>
+                <a class="text-gray-900 bg-gray-200 px-2 py-1" href="#">ALERTS</a>
+                <span class="text-gray-900">24-Feb-2025 [11:46:40]</span>
+            </div>
+        </div>
+        <nav class="bg-gray-100 py-2">
+            <div class="container mx-auto flex flex-wrap justify-between items-center px-4">
+                <a class="text-blue-900" href="#">IRCTC EXCLUSIVE</a>
+                <a class="text-orange-600" href="#">TRAINS</a>
+                <a class="text-blue-900" href="#">LOYALTY</a>
+                <a class="text-blue-900" href="#">IRCTC eWallet</a>
+                <a class="text-blue-900" href="#">BUSES</a>
+                <a class="text-blue-900" href="#">FLIGHTS</a>
+                <a class="text-blue-900" href="#">HOTELS</a>
+                <a class="text-blue-900" href="#">HOLIDAYS</a>
+                <a class="text-blue-900" href="#">MEALS</a>
+                <a class="text-blue-900" href="#">PROMOTIONS</a>
+                <a class="text-blue-900" href="#">MORE</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container mx-auto mt-4 px-4">
+        <div id="main-content">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2">
+                    <div class="flex space-x-4 mb-4">
+                        <button class="bg-blue-900 text-white px-4 py-2">PNR STATUS</button>
+                        <button class="bg-blue-900 text-white px-4 py-2">CHARTS / VACANCY</button>
+                    </div>
+                    <h1 class="text-3xl font-bold text-blue-900 mb-4">BOOK TICKET</h1>
+                    <form class="space-y-4">
+                        <div class="flex items-center border border-gray-300 rounded p-2">
+                            <i class="fas fa-map-marker-alt text-blue-900"></i>
+                            <input class="ml-2 w-full outline-none" placeholder="From" type="text"/>
+                        </div>
+                        <div class="flex items-center border border-gray-300 rounded p-2">
+                            <i class="fas fa-exchange-alt text-blue-900"></i>
+                            <input class="ml-2 w-full outline-none" placeholder="To" type="text"/>
+                        </div>
+                        <div class="flex items-center border border-gray-300 rounded p-2">
+                            <i class="fas fa-calendar-alt text-blue-900"></i>
+                            <input class="ml-2 w-full outline-none" placeholder="DD/MM/YYYY" type="text" value="24/02/2025"/>
+                        </div>
+                        <div class="flex items-center border border-gray-300 rounded p-2">
+                            <i class="fas fa-users text-blue-900"></i>
+                            <select class="ml-2 w-full outline-none">
+                                <option>GENERAL</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center border border-gray-300 rounded p-2">
+                            <i class="fas fa-train text-blue-900"></i>
+                            <select class="ml-2 w-full outline-none">
+                                <option>All Classes</option>
+                            </select>
+                        </div>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input class="mr-2" type="checkbox"/>
+                                Person With Disability Concession
+                            </label>
+                            <label class="flex items-center">
+                                <input class="mr-2" type="checkbox"/>
+                                Flexible With Date
+                            </label>
+                            <label class="flex items-center">
+                                <input class="mr-2" type="checkbox"/>
+                                Train with Available Berth
+                            </label>
+                        </div>
+                        <button class="bg-orange-500 text-white px-4 py-2 rounded">Search</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2 flex justify-center items-center">
+                    <img alt="Image of a modern train with Indian Railways branding" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/2xL9jJA06ynAHH8dcAPj6uLuvwTZv2X0ZbQH0ZN7bTY.jpg" width="600"/>
+                </div>
+            </div>
+            <div id="offers-section" class="mt-8">
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center md:flex-row md:justify-between">
+                    <div class="text-center md:text-left">
+                        <p class="text-lg">
+                            Get ₹100 off using code
+                            <span class="text-green-600 font-bold">FESTIVE</span>
+                        </p>
+                        <div class="flex justify-center md:justify-start mt-2">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center">
+                                    <p class="text-sm">Mar</p>
+                                    <p class="text-red-500">Ugadi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm">Apr</p>
+                                    <p class="text-blue-500">Ramnavmi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex flex-col items-center">
+                        <button class="bg-pink-100 text-pink-600 px-4 py-2 rounded-full flex items-center space-x-2">
+                            <i class="fas fa-train"></i>
+                            <span>Book Now</span>
+                        </button>
+                        <p class="text-gray-500 text-sm mt-2">Authorised IRCTC partner</p>
+                    </div>
+                </div>
+                <!-- Offers Section -->
+                <div class="mt-8">
+                    <h2 class="text-2xl font-bold">Offers</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <!-- Offer 1 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <p class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-full inline-block">Additional offers</p>
+                            <h3 class="text-lg font-bold mt-2">Get Rs 100 off on train tickets</h3>
+                            <p class="text-gray-500">Valid till 01 Mar</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-full">FESTIVE</span>
+                                <img alt="Piggy bank with coins" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/kCXXvz1One4kXNUXkKtg_WhsbFibIH0fda-1OrdH2dk.jpg" width="50"/>
+                            </div>
+                        </div>
+                        <!-- Offer 2 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <p class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-full inline-block">Additional offers</p>
+                            <h3 class="text-lg font-bold mt-2">Get Rs 60 off on train tickets</h3>
+                            <p class="text-gray-500">Valid till 01 Mar</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-full">SUPERB60</span>
+                                <img alt="Piggy bank with coins" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/kCXXvz1One4kXNUXkKtg_WhsbFibIH0fda-1OrdH2dk.jpg" width="50"/>
+                            </div>
+                        </div>
+                        <!-- Offer 3 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <p class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-full inline-block">Additional offers</p>
+                            <h3 class="text-lg font-bold mt-2">ZERO Convenience</h3>
+                            <p class="text-gray-500">Valid till 01 Mar</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-full">NOFEE</span>
+                                <img alt="Piggy bank with coins" class="w-12 h-12" height="50" src="https://storage.googleapis.com/a1aa/image/kCXXvz1One4kXNUXkKtg_WhsbFibIH0fda-1OrdH2dk.jpg" width="50"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Videos Section -->
+                <div class="mt-8">
+                    <h2 class="text-2xl font-bold">Videos</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <!-- Video 1 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center">
+                            <img alt="How to book IRCTC train" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/KZdXDLaGwUCJsl7jSmlf5BjGlRW3vcE2rZpO4dbXpjo.jpg" width="100"/>
+                            <h3 class="text-lg font-bold mt-2 text-center">How to book IRCTC train...</h3>
+                            <p class="bg-red-500 text-white text-sm px-2 py-1 rounded-full mt-2">Booking</p>
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center">
+                            <img alt="How to cancel a train ticket" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/vvPfx5Fqr7MGgB6lJdms2WHiti4yJHtjlOG7DkKkEGo.jpg" width="100"/>
+                            <h3 class="text-lg font-bold mt-2 text-center">How to cancel a train ticket</h3>
+                            <p class="bg-red-500 text-white text-sm px-2 py-1 rounded-full mt-2">Cancelling</p>
+                        </div>
+                        <!-- Video 3 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md flex flex-col items-center">
+                            <img alt="Live Train" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/vvPfx5Fqr7MGgB6lJdms2WHiti4yJHtjlOG7DkKkEGo.jpg" width="100"/>
+                            <h3 class="text-lg font-bold mt-2 text-center">Live Train</h3>
+                            <p class="bg-red-500 text-white text-sm px-2 py-1 rounded-full mt-2">Live</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="about" class="mt-8">
+                <h1 class="text-2xl font-bold mb-4">About IRCTC</h1>
+                <p class="mb-4">
+                    IRCTC (Indian Railway Catering and Tourism Corporation) is a subsidiary of the Indian Railways and is responsible for managing online train ticket booking, catering services, and tourism activities. IRCTC was established in 1999 to improve the passenger experience and provide modern and efficient services to Indian railway users.
+                    IRCTC is the official website of the Indian Railways for online train ticket booking, which allows users to book train tickets, check <a href="#" class="text-blue-600 underline">seat availability</a>, and access various other travel-related services.
+                </p>
+                <p class="mb-4">
+                    Millions of users use the IRCTC ticket booking platform to book train tickets. If you haven’t registered with IRCTC, all you have to do is visit the official website, click on the register link, fill in the basic, personal and address information, and click on the register button. Once the registration is completed, you will get a pop-up message asking if the email and mobile number you entered are correct. Click on the ok button to complete the registration process.
+                </p>
+                <p class="mb-4">
+                    Besides train booking, <a href="#" class="text-blue-600 underline">IRCTC next generation ticket booking</a> platform manages other services such as catering, tourism, and online shopping. It operates a chain of food plazas and restaurants across various railway stations in India, providing quality food and beverages to railway passengers.
+                </p>
+                <p class="mb-4">
+                    IRCTC has played a significant role in modernising the Indian Railways and improving the passenger experience by providing a range of services and facilities to millions of Indian railway users.
+                </p>
+                <p class="mb-4">
+                    IRCTC has partnered with redBus to facilitate train ticket booking via redRail. To book train tickets, you must have an IRCTC account. If not, it is recommended that one be created. Note that the IRCTC registration is free and requires a mobile number and email ID to create the account. Check the stepwise process to create <a href="#" class="text-blue-600 underline">IRCTC login</a> credentials.
+                </p>
+
+                <h2 class="text-xl font-bold mb-4">How to Create an IRCTC Account?</h2>
+                <p class="mb-4">
+                    Below are the stepwise instructions on how to create an IRCTC account.
+                </p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Step 1:</strong> Visit the IRCTC website.</li>
+                    <li><strong>Step 2:</strong> A page will appear where you must enter your User ID and password and confirm the password. Then, you can enter the security question if you ever forget the password. The security question entered will help you reset the password in future.</li>
+                    <li><strong>Step 3:</strong> Enter your details (Name, Gender, Date of Birth, Email ID, Mobile number, Nationality, etc), followed by the address.</li>
+                    <li><strong>Step 4:</strong> Enter the Captcha code and click the submit registration button.</li>
+                    <li><strong>Step 5:</strong> A pop-up will appear where you must click the OK button.</li>
+                    <li><strong>Step 6:</strong> Click the “ I Agree on Terms and Conditions” and the Accept button.</li>
+                    <li><strong>Step 7:</strong> A page will be displayed showing successful registration.</li>
+                    <li><strong>Step 8:</strong> You will receive an email with a user ID, password and activation link.</li>
+                    <li><strong>Step 9:</strong> Click on the link sent via email and enter the User ID and password to activate the IRCTC account.</li>
+                    <li><strong>Step 10:</strong> Enter the OTP sent on the mobile number and email for verification to complete the activation process.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-4 bg-gray-100 p-4 text-center">
+            <p class="text-blue-900">
+                Customers can use enhanced interface for their IRCTC related queries!!
+                <a class="text-red-600" href="https://equery.irctc.co.in">https://equery.irctc.co.in</a>
+            </p>
+            <p class="text-red-600">Customer Care Numbers : 14646/08044647999 /08035734999</p>
+            <p class="text-blue-900">
+                BEWARE OF FRAUDSTERS: Always download official IRCTC Rail Connect App from the Google Play Store or Apple App Store only.
+            </p>
+        </div>
+
+        <!-- User Testimonials Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">User  Testimonials</h2>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
+                <p class="font-bold">John Doe</p>
+                <p>"Booking my train tickets through IRCTC was a breeze! The interface is user-friendly and I got great offers!"</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
+                <p class="font-bold">Jane Smith</p>
+                <p>"I love the convenience of checking my PNR status online. IRCTC makes traveling so much easier!"</p>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+            <form class="bg-gray-100 p-6 rounded-lg shadow-md space-y-4">
+                <div>
+                    <label class="block text-gray-700" for="name">Full Name</label>
+                    <input class="w-full border border-gray-300 rounded p-2" type="text" id="name" placeholder="Enter Your Name" required/>
+                </div>
+                <div>
+                    <label class="block text-gray-700" for="email">Email</label>
+                    <input class="w-full border border-gray-300 rounded p-2" type="email" id="email" placeholder="Enter Your Email" required/>
+                </div>
+                <div>
+                    <label class="block text-gray-700" for="message">Message</label>
+                    <textarea class="w-full border border-gray-300 rounded p-2" id="message" rows="4" placeholder="Enter Your Message" required></textarea>
+                </div>
+                <button class="bg-blue-900 text-white px-4 py-2 rounded" type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- FAQs Section -->
+        <div id="faqs" class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions (FAQs)</h2>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                <h3 class="font-bold">1. How can I book a train ticket?</h3>
+                <p>You can book a train ticket by filling out the booking form on the homepage and clicking the "Search" button.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                <h3 class="font-bold">2. What payment methods are accepted?</h3>
+                <p>We accept various payment methods including credit/debit cards, net banking, and e-wallets.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                <h3 class="font-bold">3. How can I cancel my ticket?</h3>
+                <p>You can cancel your ticket by logging into your account and navigating to the "My Bookings" section.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+                <h3 class="font-bold">4. How do I check my PNR status?</h3>
+                <p>You can check your PNR status by entering your PNR number in the designated field on the homepage.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-4 mb-2">
+                <a class="hover:underline" href="#">Privacy Policy</a>
+                <a class="hover:underline" href="#">Terms of Service</a>
+                <a class="hover:underline" href="#">Contact Us</a>
+                <a class="hover:underline" href="#">Careers</a>
+            </div>
+            <p class="text-sm">© 2025 IRCTC. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
