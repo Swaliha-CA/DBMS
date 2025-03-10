@@ -1,22 +1,8 @@
 student@ml-36:~/swaliha$ mysql -u root -p
 Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.40-0ubuntu0.22.04.1 (Ubuntu)
 
-Copyright (c) 2000, 2024, Oracle and/or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql> create database swaliha
-    -> ;
-Query OK, 1 row affected (0.01 sec)
-
-mysql> use swaliha
+create database swaliha;
+ use swaliha
 Database changed
 mysql> create table student(stu_id int PRIMARY KEY,name varchar(10),phone_no varchar(10));
 Query OK, 0 rows affected (0.02 sec)
@@ -61,8 +47,6 @@ mysql> desc student;
 
 Query OK, 0 rows affected (0.02 sec)nt,stu_ID int ,FOREIGN KEY(stu_ID) REFERENCES student(stu_id));
 
-mysql> insert into hostel values(101,444);
-ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`swaliha`.`hostel`, CONSTRAINT `hostel_ibfk_1` FOREIGN KEY (`stu_ID`) REFERENCES `student` (`stu_id`))
 mysql> insert into hostel values(178,112);
 Query OK, 1 row affected (0.00 sec)
 
@@ -97,19 +81,13 @@ Query OK, 1 row affected (0.03 sec)
 mysql> insert into new6 values(123,"swaliha@gmail.com");
 Query OK, 1 row affected (0.00 sec)
 
-mysql> insert into new6 values(123,NULL);
-ERROR 1062 (23000): Duplicate entry '123' for key 'new6.PRIMARY'
 mysql> insert into new6 values(13423,NULL);
 Query OK, 1 row affected (0.00 sec)
 
-mysql> create table new7(roll int NULL,id int)
-    -> ;
-Query OK, 0 rows affected (0.04 sec)
+mysql> create table new7(roll int NULL,id int);
+    Query OK, 0 rows affected (0.04 sec)
  
 mysql> ;create table new8(roll_no int PRIMARY KEY,age int check (age>=18));
-ERROR: 
-No query specified
-
 Query OK, 0 rows affected (0.02 sec)
 
 mysql> insert into new8 values (11,61),(34,20);
@@ -131,8 +109,6 @@ Query OK, 0 rows affected (0.02 sec)
 mysql> insert into new9 values(11,"swaliha",'swali',200000,'not active');
 Query OK, 1 row affected (0.00 sec)
 
-mysql> insert into new9(employee_ID,Fname,Lname,salary) values(11,'zayed','bin hassan',50000);
-ERROR 1062 (23000): Duplicate entry '11' for key 'new9.PRIMARY'
 mysql> insert into new9(employee_ID,Fname,Lname,salary) values(121,'zayed','bin hassan',50000);
 Query OK, 1 row affected (0.01 sec)
 
@@ -158,8 +134,6 @@ mysql> select *from new9;
 +-------------+---------+------------+--------+------------+
 3 rows in set (0.00 sec)
 
-mysql> insert into new9(employee_ID,Fname,Lname,salary) values(521,'swali','minnu',500000);
-ERROR 1062 (23000): Duplicate entry '521' for key 'new9.PRIMARY'
 mysql> insert into new9(employee_ID,Fname,Lname,salary) values(921,'swali','minnu',500000);
 Query OK, 1 row affected (0.03 sec)
 
@@ -208,8 +182,6 @@ mysql> select * from Employee;
 +------------+-------+------------+
 4 rows in set (0.00 sec)
 
-mysql> insert into Employee values(12,'arjun','IT'),(34,'aswin','CS');
-ERROR 1062 (23000): Duplicate entry '12' for key 'Employee.PRIMARY'
 mysql> create table Department(employeeid int,roll_no int,FOREIGN KEY (employeeid) REFERENCES Employee(EmployeeID));
 Query OK, 0 rows affected (0.03 sec)
 
@@ -226,16 +198,12 @@ mysql> select *from Department;
 +------------+---------+
 2 rows in set (0.00 sec)
 
-mysql> insert into Department values(2,33),(4,66);
-ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`swaliha`.`Department`, CONSTRAINT `Department_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `Employee` (`EmployeeID`))
 mysql> create table library(ID int PRIMARY KEY,booktitle varchar(70) UNIQUE);
 Query OK, 0 rows affected (0.04 sec)
 
 mysql> insert into library values(22,'blabla');
 Query OK, 1 row affected (0.01 sec)
 
-mysql> insert into library values(2,'blabla');
-ERROR 1062 (23000): Duplicate entry 'blabla' for key 'library.booktitle'
 mysql> create table courses(coursename varchar(20) NOT NULL,branch varchar(20));
 Query OK, 0 rows affected (0.02 sec)
 
@@ -250,8 +218,7 @@ mysql> select *from courses;
 +------------+--------+
 1 row in set (0.00 sec)
 
-mysql> insert into courses(branch) values ('AI');
-ERROR 1364 (HY000): Field 'coursename' doesn't have a default value
+
 mysql> create table Students(name varchar(20),age int CHECK (age>=5));
 Query OK, 0 rows affected (0.02 sec)
 
@@ -261,8 +228,6 @@ Query OK, 1 row affected (0.01 sec)
 mysql> insert into Students values('atul',16);
 Query OK, 1 row affected (0.03 sec)
 
-mysql> insert into Students values('atul',4);
-ERROR 3819 (HY000): Check constraint 'Students_chk_1' is violated.
 mysql> create table User(roll int,status varchar(60) DEFAULT 'active');
 Query OK, 0 rows affected (0.02 sec)
 
