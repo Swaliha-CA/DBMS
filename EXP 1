@@ -1,9 +1,0 @@
-mysql> create database CMS;
-Query OK, 1 row affected (0.01 sec)
-
-mysql> use CMS
-Database changed
-
-mysql> drop database CMS;
-    Query OK, 0 rows affected (0.01 sec)
-
