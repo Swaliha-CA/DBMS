@@ -1,0 +1,35 @@
+ mysql -u root -p
+Enter password: password
+
+create database swali;
+use swali
+
+create table departments(department_id int PRIMARY KEY,department_name varchar(100));
+
+create table employees(employee_id INT primary key,name varchar(100),department_id int);
+
+insert into departments values (1,'AI'),(2,'DS'),(3,'CS'),(4,'EEE'),(5,'IT');
+
+insert into employees values(101,'Athul',6),(102,'aswathy',11),(103,'sid',44),(104,'sumi',53),(105,'alex',22);
+
+select *from employees;
++-------------+---------+---------------+
+| employee_id | name    | department_id |
++-------------+---------+---------------+
+|         101 | Athul   |             6 |
+|         102 | aswathy |            11 |
+|         103 | sid     |            44 |
+|         104 | sumi    |            53 |
+|         105 | alex    |            22 |
++-------------+---------+---------------+
+
+select *from departments;
++---------------+-----------------+
+| department_id | department_name |
++---------------+-----------------+
+|             1 | AI              |
+|             2 | DS              |
+|             3 | CS              |
+|             4 | EEE             |
+|             5 | IT              |
++---------------+-----------------+
