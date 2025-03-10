@@ -10,18 +10,10 @@ create table employees(employee_id INT primary key,name varchar(100),department_
 
 insert into departments values (1,'AI'),(2,'DS'),(3,'CS'),(4,'EEE'),(5,'IT');
 
-insert into employees values(101,'Athul',6),(102,'aswathy',11),(103,'sid',44),(104,'sumi',53),(105,'alex',22);
+insert into employees values(101,'Athul',6),(102,'aswathy',11),(103,'sid',44),(104,'sumi',53),(105,'alex',22),(106,'IT'5);
 
 select *from employees;
-+-------------+---------+---------------+
-| employee_id | name    | department_id |
-+-------------+---------+---------------+
-|         101 | Athul   |             6 |
-|         102 | aswathy |            11 |
-|         103 | sid     |            44 |
-|         104 | sumi    |            53 |
-|         105 | alex    |            22 |
-+-------------+---------+---------------+
+
 
 select *from departments;
 +---------------+-----------------+
@@ -33,3 +25,48 @@ select *from departments;
 |             4 | EEE             |
 |             5 | IT              |
 +---------------+-----------------+
+select name,department_name from employees INNER JOIN departments ON employees.department_id=departments.department_id;
++------+-----------------+
+| name | department_name |
++------+-----------------+
+| IT   | IT              |
++------+-----------------+
+SELECT employees.name, departments.department_name  FROM employees e  INNER JOIN departments d
+ON e.department_id = d.department_id;
+
+select employees.name,departments.department_name from employees LEFT JOIN departments ON employees.department_id=departments.department_id UNION SELECT employees.name,departments.department_name FROM employees RIGHT JOIN departments ON employees.department_id=departments.department_id;
++---------+-----------------+
+| name    | department_name |
++---------+-----------------+
+| Athul   | NULL            |
+| aswathy | NULL            |
+| sid     | NULL            |
+| sumi    | NULL            |
+| alex    | NULL            |
+| IT      | IT              |
+| NULL    | AI              |
+| NULL    | DS              |
+| NULL    | CS              |
+| NULL    | EEE             |
++---------+-----------------+
+SELECT employees.name,departments.department_name FROM employees RIGHT JOIN departments ON employees.department_id=departments.department_id;
++------+-----------------+
+| name | department_name |
++------+-----------------+
+| NULL | AI              |
+| NULL | DS              |
+| NULL | CS              |
+| NULL | EEE             |
+| IT   | IT              |
++------+-----------------+
+ SELECT employees.name,departments.department_name FROM employees LEFT JOIN departments ON employees
++---------+-----------------+
+| name    | department_name |
++---------+-----------------+
+| Athul   | NULL            |
+| aswathy | NULL            |
+| sid     | NULL            |
+| sumi    | NULL            |
+| alex    | NULL            |
+| IT      | IT              |
++---------+-----------------+
